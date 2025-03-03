@@ -23,3 +23,38 @@ metricCardArray.forEach(card => {
   card.innerHTML += "<p><i> - Updated</i></p>";
   card.style.backgroundColor = "greenyellow";
 });
+// Task 3
+const inventoryList = document.getElementById("inventoryList");
+
+function addInventoryItem(product) {
+  let newLi = document.createElement("li");
+  newLi.setAttribute("class","product-item");
+  newLi.setAttribute("dataset",product);
+  newLi.addEventListener("click", () => {removeInventoryItem(newLi)});
+  newLi.textContent = product;
+  inventoryList.appendChild(newLi);
+};
+
+addInventoryItem("Click me");
+addInventoryItem("Add a product below");
+
+let productForm = document.getElementById('productForm');
+let error = document.getElementById('error');
+
+productForm.addEventListener('submit', (event) => {
+  let productName = document.getElementById('productName').value;
+  if (productName.trim() === '';
+  addInventoryItem(productName);
+  event.preventDefault();
+} else {
+   error.textContent = '';
+  addInventoryItem(productName);
+  event.preventDefult();
+};
+
+function removeInventoryItem(item) {
+  inventoryList.removeChild(item);
+};
+
+
+                            

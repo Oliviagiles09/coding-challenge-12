@@ -56,5 +56,17 @@ function removeInventoryItem(item) {
   inventoryList.removeChild(item);
 };
 
+// Task 4
+cosnt customerCards = document.querySelectorAll(".customer-card");
+Const customerSelection = document.getElementById("customerSelection");
 
-                            
+custometCards.forEach(card => {
+  card.addEventListener("click", (event) => {
+    console.log('User clicked ${event.target.textContent}');
+    event.stopPropagation();
+  });
+});
+
+customerSelection.addEventListener("click", () => {
+consol.log('User clicked customerSelection');
+});

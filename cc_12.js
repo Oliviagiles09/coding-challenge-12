@@ -11,3 +11,15 @@ function createMetricCard(id, title, initvalue) {
 };
 
 createMetricCard("revenueCard", "Revenue", 0);
+
+// Task 2
+createMetricCard("profitCard", "profit", 0);
+createMetricCard("expensesCard", "expenses", 0);
+
+cosnt metricCardList = document.querySelectorAll(".metric-card");
+const metricCardArray = Array.from(metricCardList);
+
+metricCardArray.forEach(card => {
+  card.innerHTML += "<p><i> - Updated</i></p>";
+  card.style.backgroundColor = "greenyellow";
+});
